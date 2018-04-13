@@ -17,12 +17,14 @@ namespace Лаб4
             Inventar Inv2 = new Inventar("Скамья", 2, 10000.00, DateTime.Today, Tip1);
             Inventar Inv3 = new InvArenda("Ноутбук бухгалтера", 3, 20000.00, DateTime.Today, Tip2, DateTime.Today, "Иван Иванов");
             Inventar Inv4 = new Inventar("Зеркало", 4, 15000.00, DateTime.Today, Tip3);
+            Inventar Inv5 = new InvArenda("Швабра", 5, 500.17, DateTime.Today, Tip3, DateTime.Today, "Галина");
 
             List<Inventar> lstInventar = new List<Inventar>();
             lstInventar.Add(Inv1);
             lstInventar.Add(Inv2);
             lstInventar.Add(Inv3);
             lstInventar.Add(Inv4);
+            lstInventar.Add(Inv5);
 
             int idNum = 0;
             Console.Write("Введите номер инвентаря ");
