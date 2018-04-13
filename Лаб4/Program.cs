@@ -10,12 +10,12 @@ namespace Лаб4
     {
         static void Main(string[] args)
         {
-            Tipinv Tip1 = new Tipinv("Тренажеры", "Инвентарь для тренировок", 1);
-            Tipinv Tip2 = new Tipinv("Компьютеры", "Инвентарь для администрирования", 2);
-            Tipinv Tip3 = new Tipinv("Мебель", "Прочий инвентарь", 3);
+            TipInv Tip1 = new TipInv("Тренажеры", "Инвентарь для тренировок", 1);
+            TipInv Tip2 = new TipInv("Компьютеры", "Инвентарь для администрирования", 2);
+            TipInv Tip3 = new TipInv("Мебель", "Прочий инвентарь", 3);
             Inventar Inv1 = new Inventar("Беговая дорожка", 1, 15000.50, DateTime.Today, Tip1);
             Inventar Inv2 = new Inventar("Скамья", 2, 10000.00, DateTime.Today, Tip1);
-            Inventar Inv3 = new Inventar("Ноутбук бухгалтера", 3, 20000.00, DateTime.Today, Tip2);
+            Inventar Inv3 = new InvArenda("Ноутбук бухгалтера", 3, 20000.00, DateTime.Today, Tip2, DateTime.Today, "Иван Иванов");
             Inventar Inv4 = new Inventar("Зеркало", 4, 15000.00, DateTime.Today, Tip3);
 
             List<Inventar> lstInventar = new List<Inventar>();
@@ -31,11 +31,18 @@ namespace Лаб4
             Inventar selInv = lstInventar.SingleOrDefault(i1 => i1.IDinv == idNum);
             if (selInv == null)
                 Console.WriteLine("Не найдено");
-            else 
+            else
+            {
                 selInv.GetInfo();
+                if (selInv is InvArenda)
+                {
+                    (selInv as InvArenda).GetInfoArenda();
+                }
+            }
 
 
-            Console.ReadLine();            
+
+            Console.ReadLine();
         }
 
     }

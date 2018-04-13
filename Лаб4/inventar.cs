@@ -13,9 +13,9 @@ namespace Лаб4
         public int IDinv { get; set; }
         public double CostInv { get; set; }
         public DateTime DateInv { get; set; }
-        public Tipinv Tip { get; set; }
+        public TipInv Tip { get; set; }
 
-        public Inventar(string NameInv, int IDinv, double CostInv, DateTime DateInv, Tipinv Tip)
+        public Inventar(string NameInv, int IDinv, double CostInv, DateTime DateInv, TipInv Tip)
         {
             this.NameInv = NameInv;
             this.IDinv = IDinv;
@@ -24,7 +24,7 @@ namespace Лаб4
             this.Tip = Tip;
         }
 
-       public void GetInfo ()
+        public void GetInfo()
         {
             Console.Write("Код инвентаря: {0}\n    Название: {1}\n    Стоимость: {2}\n    Дата поступления: {3}\n    Тип инвентаря: ", IDinv, NameInv, CostInv, DateInv);
             Tip.GetInfo();
